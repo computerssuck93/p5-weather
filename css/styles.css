@@ -1,0 +1,110 @@
+/**********************
+General layout
+**********************/
+
+.container{
+  /*height: 35vw;*/
+}
+
+.wrapper{
+	/*display: inline-block !important;*/
+  border: 3px groove black;
+  margin-top: 5%;
+  height: 30%;
+  padding-top: 0 !important;
+  padding-left: 0 !important;
+}
+
+/**********************
+CURRENT DAYS WEATHER
+**********************/
+
+.today{
+  width: 37%;
+  display: inline-block;
+}
+
+.iconBox{
+   width: 100%;
+   max-width: 350px;
+   border: 3px groove rgb(124, 119, 119);
+   border-top: none;
+   border-left: none;
+   text-align: center;
+   padding: 5% 0 10% 0;
+}
+
+.todayIcon{
+  width: 65%;
+  height: 65%;
+}
+
+p.temp,
+p.condition{
+  font-family: 'Helvetica', sans-serif;
+  font-weight: bold;
+  letter-spacing: .025em;
+  text-align: center;
+  max-width: 350px;
+}
+
+p.temp{
+  font-size: 3vw;
+  margin: 3% 0 2% 0;
+}
+
+p.condition{
+  font-size: 2.5vw;
+  margin-bottom: 3%;
+}
+
+/**********************
+CURRENT ZIP & CITY
+
+FFFUUUUUUUUUUCCCCCCCCCCCKKKKKKKKKK YOU ZIP CODE!!!!!
+THERE IS LITERALLY ALMOST NO TOOLS, HELP, CODE, EXAMPLES, PLUGINS, OR
+ANY OTHER MEANS TO SIMPLY FIND THE ZIP CODE OF WHERE YOU ARE AT.....
+IT CAN FIND THE FUCKIN CITY, STATE, YOUR GOD DAMN IP ADDRESS, BUT
+NO WHERE ON THE INTERNET EVER HAS THERE BEEN ANYONE THAT THOUGHT
+INCLUDING THE FUCKIN ZIP CODE WAS FUCKIN CONVENIENT.... FUCK YOU!
+**********************/
+
+.curLocation{
+  width: 30%;
+  display: inline-block;
+  vertical-align: top;
+  margin: 2% 0 0 0%;;
+}
+
+p.zip,
+p.city{
+  font-family: 'Helvetica', sans-serif;
+  font-size: 1.75vw;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: .025em;
+  text-align: left;
+  max-width: 300px;
+}
+
+/**********************
+5 Day Forecast
+**********************/
+
+#forecast{
+  width: 60%;
+  border: 3px groove rgb(124, 119, 119);
+  display: inline-block ;
+  text-align: center;
+}
+
+
+#day2, #day3, #day4, #day5{
+  width: 20%;
+  display: inline-block;
+  margin: 0% 2% 0% 2%;
+}
+
+.dayIcon{
+  width: 50%;
+}
