@@ -16,6 +16,7 @@
 
   </head>
 
+
   <body>
     <div class="ui grid container">
       <div class="fourteen wide centered column wrapper">
@@ -35,7 +36,7 @@
         </div>
 
         <div class="curLocation">
-          
+          <button id="myLocation">Use My Location</button>
           <p class="zip"></p>
           <p class="city"></p>
           <button id="weekForecast"><i class="chevron circle down icon"></i>5-Day Forecast</button>
@@ -76,15 +77,11 @@
 
         </div>
 
-        <!-- <h1>Simple Weather Plugin</h1> -->
+        <form class="ui action input newZip">
+          <input id="ZipCode" class="newZip" type="text" placeholder="Zip Code">
+          <button class="ui button newZip">GO</button>
+        </form>
 
-        <!-- Output Weather -->
-        <!--       <ul>
-        <li class="temp"> </li>
-        <li class="city"> </li>
-        <li class="region"> </li>
-        <li class="thumb"></li>
-      </ul> -->
 
         <!-- END WRAPPER DIV -->
       </div>

@@ -1,7 +1,9 @@
 //var cheney = '99004';
-//var spoValley = '99016';
+//var spoValley = 99016;
 var icon;
 var zip;
+var newZip;
+var NZ = false;
 
 $('#forecast').hide();
 
@@ -50,19 +52,43 @@ function showError(msg){
 
 /**********************************************************************/
 
-$(window).load(function(){
+$('#myLocation').on('click', function(){
   navigator.geolocation.getCurrentPosition(function(position) {
     loadWeather(position.coords.latitude+','+position.coords.longitude); 
   });
+  $(this).css('display', 'none');
+
 });
+
+// $(window).load(function(){
+//   navigator.geolocation.getCurrentPosition(function(position) {
+//     loadWeather(position.coords.latitude+','+position.coords.longitude); 
+//   });
+// });
 
 
 /**********************************************************************/
 
-$(document).ready(function() {
-  loadWeather('GreenAcres, WA', ''); //@params location, woeid
+// $(document).ready(function() {
+
+
+
+//   loadWeather('GreenAcres, WA', ''); //@params location, woeid
+// });
+
+
+$('form.newZip').submit( function(event){
+
+  newZip = document.getElementById('ZipCode');
+  //console.log($(newZip).val());
+  NZ = true;
+  event.preventDefault();
+  loadWeather(newZip.value, '');
+  
+
 });
 
+loadWeather('99016', '');
 
 function loadWeather(location, woeid){
 
@@ -90,6 +116,14 @@ function loadWeather(location, woeid){
       var unit = weather.units.temp;
       // Get & Store the weather condition text
       var condition = weather.text;
+
+      //console.log(zip)
+      if(NZ == true){
+
+        zip = newZip.value;
+        $('#myLocation').css('display', 'none');
+        console.log(zip);
+      }
 
       $.get("http://ipinfo.io", function (response) {
         //$("#ip").html("IP: " + response.ip);
@@ -252,8 +286,41 @@ function loadWeather(location, woeid){
   });
 }
 
+/**********************************************************************/
+
+function changeElementSize(){
+    // Compare your element's aspect ratio with window's aspect ratio
+    if (window.innerWidth/window.innerHeight > 2.95){
+        //$('.todayIcon').css('height:','auto;');
+        $('.todayIcon').css("width","50vmin");
+    } else {
+        $('.todayIcon').css("width","60%");
+        //$('.todayIcon').css('height:','auto;');
+    }
+}
+
+$( window ).resize(function() {
+    changeElementSize();
+});
+
+$( window ).load(function() {
+    changeElementSize();
+});
+
+/**********************************************************************/
 
 $('#weekForecast').click( function(){
 
     $('#forecast').fadeToggle(1000);
 });
+
+/**********************************************************************/
+
+
+// $('button.newZip').submit( function(){
+
+//   var newZip = document.getElementById('ZipCode');
+//   loadWeather(newZip.value, '');
+//   //console.log(newZip.value)
+
+// });
