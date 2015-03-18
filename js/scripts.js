@@ -115,14 +115,14 @@ function loadWeather(location, woeid){
       // Get & Store weather temp. unit
       var unit = weather.units.temp;
       // Get & Store the weather condition text
-      var condition = weather.text;
+      var condition = weather.currently;
 
       //console.log(zip)
       if(NZ == true){
 
         zip = newZip.value;
         $('#myLocation').css('display', 'none');
-        console.log(zip);
+        //console.log(zip);
       }
 
       $.get("http://ipinfo.io", function (response) {
